@@ -23,11 +23,11 @@ class ProductoFisicoTest {
         assertThat(ProductoFisico.class).hasSuperclass(Producto.class);
         assertThat(Producto.class).isAbstract();
         assertThat(teclado.getNombre()).isEqualTo("Teclado mecánico");
-        assertThat(teclado.getPrecio()).isEqualTo(new BigDecimal("80000.00"));
+        assertThat(teclado.getPrecioUnitario()).isEqualTo(new BigDecimal("80000.00"));
         assertThat(teclado.getCategoria()).isEqualTo(Categoria.ELECTRONICA);
         assertThat(teclado.getStock()).isEqualTo(10);
         assertThat(teclado.getStockMinimo()).isEqualTo(3);
-        assertThat(teclado.getPeso()).isEqualTo(1.2);
+        assertThat(teclado.getPesoKg()).isEqualTo(1.2);
     }
 
     /**
@@ -41,7 +41,7 @@ class ProductoFisicoTest {
         teclado.descontarStock(8);
         
         //verificar que el stock sea igual a 2
-        assertThat(teclado.getStock()).isEqualTo(2);
+        assertThat(teclado.getStockActual()).isEqualTo(2);
         //verificar que se debe pedir envio ya que el stock es menor al stock minimo
         assertThat(teclado.pedirEnvio()).isTrue();
     }
