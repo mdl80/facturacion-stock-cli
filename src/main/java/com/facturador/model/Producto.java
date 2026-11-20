@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 /**
  * <h3>Producto</h3>
  * <p>Esta clase define de forma generica(abstracta) un producto
- * esta sellada o tiene un contrato solo con una clase hija "roductoFisico"<p>
+ * esta sellada o tiene un contrato solo con una clase hija "ProductoFisico"<p>
  */
 public abstract sealed class Producto permits ProductoFisico {
     
@@ -38,18 +38,44 @@ public abstract sealed class Producto permits ProductoFisico {
     }
 
     /**
+     * Este metodo devuelve el id de un Producto
+     * @return String Codigo del Producto
+     */
+    public String getId(){
+        return this.id;
+    }
+
+    /**
+     * Este metodo devuelve el nombre de un producto
+     * @return String nombre del producto
+     */
+    public String getNombre(){
+        return this.nombre;
+    }
+
+    /**
+     * Este metodo devuelve el precio unitario de un Producto
+     * @return BigDecimal
+     */
+    public BigDecimal getPrecioUnitario(){
+        return this.precioUnitario;
+    }
+
+    /**
+      * Este metodo devuelve la catergoria de un producto
+      * @return
+      */
+    public Categoria getCategoria(){
+        return this.categoria;
+    }  
+    
+    /**
      * Este metodo debe ser implementado por las clases hijas
      * @return verdadero o falso
      */
-    public boolean requiereEnvio(){
-
-    }
-    public boolean hayStockDisponible(int cantidadSolicitada){
-
-    }
-    void descontarStock(int cantidad){
-
-    }
+    public abstract boolean requiereEnvio();
+    public abstract boolean hayStockDisponible(int cantidadSolicitada);
+    public abstract void descontarStock(int cantidad);
 
 
 
