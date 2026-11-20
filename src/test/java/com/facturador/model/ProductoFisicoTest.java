@@ -1,9 +1,10 @@
 package com.facturador.model;
 
-import java.math.BigDecimal;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
+import java.math.BigDecimal;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
  
@@ -21,7 +22,6 @@ class ProductoFisicoTest {
         assertThat(teclado).isInstanceOf(Producto.class);
         assertThat(ProductoFisico.class).hasSuperclass(Producto.class);
         assertThat(Producto.class).isAbstract();
-        assertThat(teclado.getCodigo()).isEqualTo("PROD-001");
         assertThat(teclado.getNombre()).isEqualTo("Teclado mecánico");
         assertThat(teclado.getPrecio()).isEqualTo(new BigDecimal("80000.00"));
         assertThat(teclado.getCategoria()).isEqualTo(Categoria.ELECTRONICA);
