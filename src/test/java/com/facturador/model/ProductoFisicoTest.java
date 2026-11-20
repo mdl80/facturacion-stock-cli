@@ -25,7 +25,7 @@ class ProductoFisicoTest {
         assertThat(teclado.getNombre()).isEqualTo("Teclado mecánico");
         assertThat(teclado.getPrecioUnitario()).isEqualTo(new BigDecimal("80000.00"));
         assertThat(teclado.getCategoria()).isEqualTo(Categoria.ELECTRONICA);
-        assertThat(teclado.getStock()).isEqualTo(10);
+        assertThat(teclado.getStockActual()).isEqualTo(10);
         assertThat(teclado.getStockMinimo()).isEqualTo(3);
         assertThat(teclado.getPesoKg()).isEqualTo(1.2);
     }
